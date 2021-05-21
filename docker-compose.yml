@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+    jupyter:
+        build:
+            context: ./
+            dockerfile: dockerfiles/jupyter.docker
+        volumes:
+            - ${LOCAL_WORKING_DIR}:/home/jovyan/work
+        ports:
+            - ${PORT}:8888
